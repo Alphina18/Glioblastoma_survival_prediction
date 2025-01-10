@@ -1,0 +1,35 @@
+Logboek: Voorspellen van Tumorprogressie 
+
+Datum: 06/01/2025 - __/__/2025 
+Versie: 1.0 
+
+Inleiding 
+In dit logboek documenteer ik de voortgang en bevindingen van het project gericht op het ontwikkelen of testen van een machine learning-model dat levensverwachting en tumor volume kan voorspellen op basis van een collectie verschillende features. Het doel van dit project is om een voorspellend model te creëren of te vinden en gebruiken dat in staat is om verschillende features te analyseren en daar keuze in kan maken voor de beste voorspelling.  Dit kan mogelijk leiden tot vroegtijdige interventies/check-ups en verbeterde behandelresultaten voor patiënten. 
+
+Projectdoelstellingen 
+Hoofddoel: Ontwikkelen of testen van een machine learning-model dat tumorprogressie voorspelt en met die data ook een levensverwachting kan voorspellen. 
+Onderzoeksvraag: In hoeverre kan er voorspeld worden hoe snel de tumor kan terug komen en wat de levensverwachting is? Hierbij is het ook heel belangrijk dat er wordt gekeken naar hoe makkelijk het model "stuk gaat”. 
+
+Projectstructuur 
+Het project is opgedeeld in verschillende fasen, waaronder data voorbereiding en analyse, feature engineering, modelselectie, validatie, evaluatie, en rapportage. Elke fase zal zorgvuldig worden gedocumenteerd om de voortgang en resultaten te volgen. 
+
+Data analyse 
+Er zijn 2 bestanden waar wat features in staan waar gebruik van gemaakt kan worden en ook aparte bestanden voor volume van de tumor. De eerste 2 bestanden zijn excel bestanden waar alle data van alle patiënten in staat. De eerste is “LUMIERE-Demographics_Pathology.csv” dit bestaat uit de volgende lijst aan kolommen: 
+- Patient_number 
+- Survival_time: hoe lang na de operatie de patient het heeft overleeft.
+- Sex 
+- Age at surgery 
+- IDH: Of de IDH gen een mutatie heeft of niet.
+- IDH method: welke methode ze hebben gebruikt om te sequencen.
+- MGMT qualitative: Of het MGMT gen gemetyleerd is of niet.
+- MGMT quantitative: Hoeveel procent gemethyleerd is.
+
+De 2de is “LUMIERE-ExpertRating_v202211.csv” en bestaat uit de volgende kolomen: 
+- Patient nummer 
+- Date: In welke week de MRI is genomen.
+- LessThan3Months: Of het minder dan 3 maanden na de operatie de tumor terug is gevonden.
+- NonMeasurableLesions: Als de tumor niet meetbaar is.
+- Rating: in welke categorie de tumor op dat moment valt. De rating is als volgt: PD: Progressive disease, SD: Stable disease, PR: Partial response, CR: Complete response, Pre-Op: Pre-Operative, Post-Op: Post-Operative.
+- Rating rationale : CRET: complete resection of the enhancing tumor, PRET: partial resection of the enhancing tumor, T2-Progr.: T2-Progression, L: Lesion. 
+
+De data bestanden voor volume zitten in patient\week\DeepBraTumIA-segmentation\atlas\segmentation\measured_volumes_in_mm3.json, de structuur en naam van het bestand is overal hetzelfde. In het bestand zit een dict met 3 key en values: Necrotic_NonEnhancing voor dood weefsel, Enhancing_Core voor active tumor en Edema_Compartment voor vochtophoping. 
